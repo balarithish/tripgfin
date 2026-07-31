@@ -93,6 +93,7 @@ tour operator tamilnadu
 	
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -108,206 +109,171 @@ tour operator tamilnadu
 	
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- ===== Trip G Header/Hero (tgh-) — scoped, does not touch existing template styles ===== -->
+	<style>
+	:root{
+	  --tgh-teal-deep:#0B4640;
+	  --tgh-teal:#12665D;
+	  --tgh-teal-soft:#E4EEEC;
+	  --tgh-sand:#FBF6EC;
+	  --tgh-saffron:#E8A33D;
+	  --tgh-saffron-dark:#C97F1F;
+	  --tgh-ink:#12312C;
+	  --tgh-ink-soft:#4C6560;
+	}
+	.tgh-topbar{background:var(--tgh-teal-deep);color:#DCEAE7;font-size:.82rem;font-family:'Manrope',sans-serif;position:relative;z-index:210;}
+	.tgh-topbar-in{max-width:1220px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+	.tgh-topbar-left{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+	.tgh-topbar-left span{display:flex;align-items:center;gap:7px;}
+	.tgh-topbar-left i{color:var(--tgh-saffron);}
+	.tgh-topbar-left a{color:#DCEAE7;text-decoration:none;}
+	.tgh-topbar-right{display:flex;align-items:center;gap:12px;}
+	.tgh-topbar-right a{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:.2s;font-size:.82rem;color:#DCEAE7;text-decoration:none;}
+	.tgh-topbar-right a:hover{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
+
+	.tgh-navwrap{position:sticky;top:0;z-index:200;background:var(--tgh-sand);border-bottom:1px solid rgba(11,70,64,.1);font-family:'Manrope',sans-serif;transition:.3s;}
+	.tgh-navwrap.tgh-scrolled{box-shadow:0 8px 24px -12px rgba(11,70,64,.28);}
+	.tgh-nav{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;}
+	.tgh-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+	.tgh-brand img{width:46px;height:46px;object-fit:cover;border-radius:12px;flex-shrink:0;}
+	.tgh-brand-text{line-height:1.15;}
+	.tgh-brand-text .tgh-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--tgh-teal-deep);display:block;}
+	.tgh-brand-text .tgh-tag{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tgh-ink-soft);}
+	.tgh-menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;}
+	.tgh-menu a{font-weight:600;font-size:.92rem;color:var(--tgh-ink);text-decoration:none;position:relative;padding:6px 0;}
+	.tgh-menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--tgh-saffron);transition:.25s;}
+	.tgh-menu a:hover::after{width:100%;}
+	.tgh-cta{display:flex;align-items:center;gap:10px;}
+	.tgh-icon-call{width:42px;height:42px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:.2s;text-decoration:none;}
+	.tgh-icon-call:hover{background:var(--tgh-teal-deep);color:#fff;}
+	.tgh-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 18px;border-radius:100px;font-weight:700;font-size:.85rem;text-decoration:none;transition:.2s;}
+	.tgh-wa-btn:hover{background:#1fb956;color:#fff;transform:translateY(-2px);}
+	.tgh-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+	.tgh-burger span{width:24px;height:2.5px;background:var(--tgh-teal-deep);border-radius:2px;transition:.3s;}
+	.tgh-menu-close{display:none;}
+	.tgh-overlay{position:fixed;inset:0;background:rgba(8,30,26,.5);z-index:190;opacity:0;pointer-events:none;transition:.3s;}
+	.tgh-overlay.tgh-show{opacity:1;pointer-events:auto;}
+
+	.tgh-hero{position:relative;height:88vh;min-height:560px;overflow:hidden;font-family:'Manrope',sans-serif;}
+	.tgh-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;}
+	.tgh-slide.tgh-active{opacity:1;}
+	.tgh-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,26,.55) 0%,rgba(11,29,26,.35) 45%,rgba(6,20,18,.85) 100%);}
+	.tgh-hero-in{position:relative;z-index:3;height:100%;max-width:1220px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;justify-content:center;}
+	.tgh-hero-content{max-width:640px;color:#fff;}
+	.tgh-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tgh-saffron);margin-bottom:16px;}
+	.tgh-eyebrow::before{content:"";width:22px;height:2px;background:var(--tgh-saffron);display:inline-block;}
+	.tgh-hero-content h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.1;margin-bottom:18px;color:#fff;}
+	.tgh-hero-content h1 em{color:var(--tgh-saffron);font-style:normal;}
+	.tgh-hero-content p{font-size:1.08rem;color:#E8F1EF;max-width:500px;line-height:1.6;margin-bottom:30px;}
+	.tgh-hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+	.tgh-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:100px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.25s ease;text-decoration:none;}
+	.tgh-btn-primary{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
+	.tgh-btn-primary:hover{background:var(--tgh-saffron-dark);color:var(--tgh-teal-deep);transform:translateY(-2px);}
+	.tgh-btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.55);color:#fff;}
+	.tgh-btn-outline:hover{background:rgba(255,255,255,.12);color:#fff;}
+	.tgh-dots{position:absolute;left:24px;bottom:36px;z-index:4;display:flex;gap:10px;}
+	.tgh-dots button{width:9px;height:9px;border-radius:50%;border:1.5px solid rgba(255,255,255,.7);background:transparent;cursor:pointer;padding:0;transition:.25s;}
+	.tgh-dots button.tgh-active{background:var(--tgh-saffron);border-color:var(--tgh-saffron);width:26px;border-radius:6px;}
+
+	.tgh-floaters{position:fixed;right:20px;bottom:20px;z-index:300;display:flex;flex-direction:column;gap:12px;}
+	.tgh-floaters a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:0 10px 24px -6px rgba(0,0,0,.4);transition:.2s;text-decoration:none;}
+	.tgh-floaters a:hover{transform:scale(1.08);}
+	.tgh-fl-wa{background:#25D366;}
+	.tgh-fl-call{background:var(--tgh-teal-deep);}
+	.tgh-pulse{position:relative;}
+	.tgh-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;opacity:.55;animation:tgh-pulse 2s infinite;}
+	@keyframes tgh-pulse{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.7);opacity:0;}}
+
+	@media (max-width:860px){
+	  .tgh-topbar-in{justify-content:center;text-align:center;}
+	  .tgh-topbar-left{justify-content:center;width:100%;}
+	  .tgh-menu{position:fixed;top:0;right:-100%;width:78%;max-width:300px;height:100vh;background:#fff;flex-direction:column;align-items:flex-start;padding:100px 30px 30px;gap:22px;transition:.35s;box-shadow:-10px 0 40px rgba(0,0,0,.15);z-index:220;}
+	  .tgh-menu.tgh-open{right:0;}
+	  .tgh-wa-btn span{display:none;}
+	  .tgh-burger{display:flex;}
+	  .tgh-menu-close{display:flex;align-items:center;justify-content:center;position:absolute;top:24px;right:24px;width:38px;height:38px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);border:none;font-size:1.6rem;line-height:1;cursor:pointer;transition:.2s;}
+	  .tgh-menu-close:hover{background:var(--tgh-teal-deep);color:#fff;}
+	}
+	@media (max-width:560px){
+	  .tgh-hero{height:100vh;}
+	  .tgh-hero-content p{font-size:1rem;}
+	}
+	</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<div class="container">
-			
-<a class="navbar-brand" href="index.html"><img src="images/logo.jpg" style="width:30%;border-radius:20px;"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-					<li class="nav-item"><a href="#destination" class="nav-link">Destination</a></li>
-					<li class="nav-item"><a href="#book" class="nav-link">Booking</a></li>
-					<li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
-					<li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
-				</ul>
+	<!-- ============ TOP SOCIAL/UTILITY BAR ============ -->
+	<div class="tgh-topbar">
+		<div class="tgh-topbar-in">
+			<div class="tgh-topbar-left">
+				<span><i class="fa fa-phone"></i> <a href="tel:+919037432640">+91 90374 32640</a></span>
+				<span><i class="fa fa-envelope"></i> <a href="mailto:tripgtravels01@gmail.com">tripgtravels01@gmail.com</a></span>
+				<span><i class="fa fa-map-marker"></i> Poovar, Kerala, India</span>
 			</div>
-		</div>
-	</nav>
-	<!-- END nav -->
-	
-	<div class="hero-wrap js-fullheight" style="background-image: url('images/munnar1.jpg');">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-				<div class="col-md-7 ftco-animate">
-					<span class="subheading" >Welcome to Trip G Travels</span>
-					<h1 class="mb-4">Discover Your Favorite Place with Us</h1>
-					<p class="caps">Travel to the any corner of the Kerala, without going around in circles</p>
-				</div>
-				<a href="#" class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
-
-
-					<span class="fa fa-play"></span>
-				</a>
+			<div class="tgh-topbar-right">
+				<a href="https://www.facebook.com/share/1CeniYqeAb/" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+				<a href="https://www.instagram.com/trip_g_travels" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+				<a href="https://youtube.com/@tripgtravels" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+				<a href="https://wa.me/919037432640" target="_blank" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
 			</div>
 		</div>
 	</div>
 
-	<section class="ftco-section ftco-no-pb ftco-no-pt">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="ftco-search d-flex justify-content-center">
-						<div class="row">
-							<div class="col-md-12 nav-link-wrap">
-								<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-									<a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Search Tour</a>
+	<!-- ============ MAIN NAV BAR ============ -->
+	<div class="tgh-navwrap" id="tghNavwrap">
+		<div class="tgh-nav">
+			<a href="index.html" class="tgh-brand">
+				<img src="images/logo.jpg" alt="Trip G Travels logo" style="margin:10px%;">
+				<div class="tgh-brand-text">
+					<span class="tgh-name">Trip G Travels</span>
+					<span class="tgh-tag">South India &amp; Beyond</span>
+				</div>
+			</a>
 
-									<a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Hotel</a>
+			<ul class="tgh-menu" id="tghMenu">
+				<button class="tgh-menu-close" id="tghMenuClose" aria-label="Close menu">&times;</button>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#destination">Destination</a></li>
+				<li><a href="#book">Booking</a></li>
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#footer">Contact</a></li>
+			</ul>
 
-								</div>
-							</div>
-							<div class="col-md-12 tab-wrap">
-								
-								<div class="tab-content" id="v-pills-tabContent">
+			<div class="tgh-cta">
+				
+				<button class="tgh-burger" id="tghBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+			</div>
+		</div>
+	</div>
+	<div class="tgh-overlay" id="tghOverlay"></div>
+	<!-- END nav -->
 
-									<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-										<form action="#" class="search-property-1">
-											<div class="row no-gutters">
-												<div class="col-md d-flex">
-													<div class="form-group p-4 border-0">
-														<label for="#">Destination</label>
-														<div class="form-field">
-															<div class="icon"><span class="fa fa-search"></span></div>
-															<input type="text" class="form-control" placeholder="Search place">
-														</div>
-													</div>
-												</div>
-												<div class="col-md d-flex">
-													<div class="form-group p-4">
-														<label for="#">Check-in date</label>
-														<div class="form-field">
-															<div class="icon"><span class="fa fa-calendar"></span></div>
-															<input type="text" class="form-control checkin_date" placeholder="Check In Date">
-														</div>
-													</div>
-												</div>
-												<div class="col-md d-flex">
-													<div class="form-group p-4">
-														<label for="#">Check-out date</label>
-														<div class="form-field">
-															<div class="icon"><span class="fa fa-calendar"></span></div>
-															<input type="text" class="form-control checkout_date" placeholder="Check Out Date">
-														</div>
-													</div>
-												</div>
-												<div class="col-md d-flex">
-													<div class="form-group p-4">
-														<label for="#">Price Limit</label>
-														<div class="form-field">
-															<div class="select-wrap">
-																<div class="icon"><span class="fa fa-chevron-down"></span></div>
-																<select name="" id="" class="form-control">
-																	<option value="">$100</option>
-																	<option value="">$10,000</option>
-																	<option value="">$50,000</option>
-																	<option value="">$100,000</option>
-																	<option value="">$200,000</option>
-																	<option value="">$300,000</option>
-																	<option value="">$400,000</option>
-																	<option value="">$500,000</option>
-																	<option value="">$600,000</option>
-																	<option value="">$700,000</option>
-																	<option value="">$800,000</option>
-																	<option value="">$900,000</option>
-																	<option value="">$1,000,000</option>
-																	<option value="">$2,000,000</option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-md d-flex">
-													<div class="form-group d-flex w-100 border-0">
-														<div class="form-field w-100 align-items-center d-flex">
-															<input type="submit" value="Search" class="align-self-stretch form-control btn btn-primary">
-														</div>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>
+	<!-- ============ HERO BANNER ============ -->
+	<section class="tgh-hero" id="home">
+		<div class="tgh-slide tgh-active" style="background-image:url('images/munnar1.jpg')"></div>
+		<div class="tgh-slide" style="background-image:url('images/poovar.jpg')"></div>
+		<div class="tgh-slide" style="background-image:url('images/coorg.jpg')"></div>
+		<div class="tgh-slide" style="background-image:url('images/boat.jpg')"></div>
 
-									<div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
-										<form action="#" class="search-property-1">
-											<div class="row no-gutters">
-												<div class="col-lg d-flex">
-													<div class="form-group p-4 border-0">
-														<label for="#">Destination</label>
-														<div class="form-field">
-															<div class="icon"><span class="fa fa-search"></span></div>
-															<input type="text" class="form-control" placeholder="Search place">
-														</div>
-													</div>
-												</div>
-												<div class="col-lg d-flex">
-													<div class="form-group p-4">
-														<label for="#">Check-in date</label>
-														<div class="form-field">
-															<div class="icon"><span class="fa fa-calendar"></span></div>
-															<input type="text" class="form-control checkin_date" placeholder="Check In Date">
-														</div>
-													</div>
-												</div>
-												<div class="col-lg d-flex">
-													<div class="form-group p-4">
-														<label for="#">Check-out date</label>
-														<div class="form-field">
-															<div class="icon"><span class="fa fa-calendar"></span></div>
-															<input type="text" class="form-control checkout_date" placeholder="Check Out Date">
-														</div>
-													</div>
-												</div>
-												<div class="col-lg d-flex">
-													<div class="form-group p-4">
-														<label for="#">Price Limit</label>
-														<div class="form-field">
-															<div class="select-wrap">
-																<div class="icon"><span class="fa fa-chevron-down"></span></div>
-																<select name="" id="" class="form-control">
-																	<option value="">$100</option>
-																	<option value="">$10,000</option>
-																	<option value="">$50,000</option>
-																	<option value="">$100,000</option>
-																	<option value="">$200,000</option>
-																	<option value="">$300,000</option>
-																	<option value="">$400,000</option>
-																	<option value="">$500,000</option>
-																	<option value="">$600,000</option>
-																	<option value="">$700,000</option>
-																	<option value="">$800,000</option>
-																	<option value="">$900,000</option>
-																	<option value="">$1,000,000</option>
-																	<option value="">$2,000,000</option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-lg d-flex">
-													<div class="form-group d-flex w-100 border-0">
-														<div class="form-field w-100 align-items-center d-flex">
-															<input type="submit" value="Search" class="align-self-stretch form-control btn btn-primary p-0">
-														</div>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+		<div class="tgh-dots" id="tghDots"></div>
+
+		<div class="tgh-hero-in">
+			<div class="tgh-hero-content">
+				<span class="tgh-eyebrow">Welcome to Trip G Travels</span>
+				<h1>Discover Your Favorite Place <em>with Us</em></h1>
+				<p>Travel to any corner of Kerala and Tamil Nadu without going around in circles — backwaters, hills and temple towns, planned door to door.</p>
+				<div class="tgh-hero-btns">
+					<a href="#destination" class="tgh-btn tgh-btn-primary"><i class="fa fa-map-marker"></i> Explore Destinations</a>
+					<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20a%20tour%20package." target="_blank" class="tgh-btn tgh-btn-outline"><i class="fa fa-whatsapp"></i> Chat &amp; Book</a>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
+
+	
+
+
 
 		<section class="ftco-section services-section" id="about">
 			<div class="container">
@@ -368,6 +334,187 @@ tour operator tamilnadu
 				</div>
 			</div>
 		</section>
+
+
+<!-------------------Booking-------------!>
+
+<style>
+.booking-section{
+    position:relative;
+    padding:100px 20px;
+    background:url('images/s20.jpeg') center center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:700px;
+    overflow:hidden;
+}
+
+.booking-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.45));
+}
+
+.booking-card{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.booking-title{
+    text-align:center;
+    font-size:36px;
+    color:#0d47a1;
+    margin:0 0 10px;
+}
+
+.booking-subtitle{
+    text-align:center;
+    color:#555;
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+.booking-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.booking-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #d8d8d8;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    background:#fff;
+    transition:.3s;
+    box-sizing:border-box;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+    border-color:#1976d2;
+    box-shadow:0 0 10px rgba(25,118,210,.25);
+}
+
+.booking-form textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+.booking-btn{
+    border:none;
+    padding:16px;
+    background:linear-gradient(135deg,#ff9800,#ff6f00);
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.booking-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(255,111,0,.35);
+}
+
+@media(max-width:768px){
+
+.booking-section{
+    padding:70px 15px;
+    min-height:auto;
+}
+
+.booking-card{
+    padding:25px;
+}
+
+.booking-title{
+    font-size:28px;
+}
+
+.booking-row{
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+}
+</style>
+
+<section class="booking-section">
+
+    <div class="booking-card">
+
+        <h2 class="booking-title">Book Your Dream Trip</h2>
+
+        <p class="booking-subtitle">
+            Fill in your details and our travel expert will contact you within 24 hours.
+        </p>
+
+        <form class="booking-form">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <div class="booking-row">
+                <input type="tel" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email Address">
+            </div>
+
+            <input type="text" placeholder="Destination" required>
+
+            <div class="booking-row">
+                <input type="date" required>
+                <input type="date" required>
+            </div>
+
+            <select required>
+                <option value="">Number of Travellers</option>
+                <option>1 Traveller</option>
+                <option>2 Travellers</option>
+                <option>3 Travellers</option>
+                <option>4 Travellers</option>
+                <option>5+ Travellers</option>
+            </select>
+
+            <textarea placeholder="Special Requirements"></textarea>
+
+            <button type="submit" class="booking-btn">
+                ✈ Book My Trip
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+<!---------------Bookig-----------------!>
+
+</br></br>
+
+
+
+
 
 		<section class="ftco-section img ftco-select-destination" style="background-image: url(images/services-1.jpg);" id="destination">
 			<div class="container">
@@ -793,61 +940,14 @@ tour operator tamilnadu
 
 
 <center>
-<section id="book" style="background-color:#013F6A;color:white;>
-<a href="https://wa.me/+919037432640" target="_blank">
-<img src="images/w2.png" alt="WhatsApp"style="width:45px;background-color:white;border-color:white;border-radius:20px;margin:0px;"></a>
-<a href="tel:+919037432640"><img src="images/c3.jpg" alt="WhatsApp" style="width:45px;background-color:white;border-color:white;border-radius:20px;"></a>
-<p> Book Now Call +91-9037432640 </p>
-
-
- <h1 style="margin-top:3rem;Payment Option</h1></center>
-    
-    <div class="gallery-container" style="margin-top:100px;">
-        <div class="gallery-item" style="margin:2rem;border-radius:5px;">
-<div>
-            
-
-  
-                          <div class="item phone" style="background-color:#013F6A;color:white;">
-                            <h5 style="font-color=midnightblue;font-size:14px;font-weight:1000px;padding:2px;diplay:flex">
-<h4 style="background-color:white;color:green;"> Payment Options Available</h4>
-
-<h5 style="color:white;">9037432640</h5>
-<img src="images/paytm.png"style="width:70px";>
-<img src="images/phonepay.png" style="width:70px";></br>
-<img src="images/gpay.png" style="width:70px";>
-</br><p style="font-size:14px;">or</p></br>
-<p style="font-size:14px;" >
-
-Federal Bank Account Number: 20180100048707</br>
-
-Customer Name: Shafi N</br>
-
-Branch Name: Poovar</br>
-
-Branch IFSC: FDRL0002018</br>
-
-MMID: 9049707</br>
-
-VPA: 919037432640@federal</br>
-
-</p>
-        </div>
-    
-        </div>
-    </div>
-</center>
-<center>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3929.740516636358!2d78.1518117088954!3d9.95553409010653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s83%20venus%20plaza%2C120%20feet%20road!5e0!3m2!1sen!2sin!4v1760693069494!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </center>  </div>
-
+<section id="book" style="background-color:#013F6A;color:white;">
 
 
 
 </section>
 
 
-		<footer class="ftco-footer bg-bottom ftco-no-pt" id="footer" style="background-image: url(images/bg_3.jpg); >
+		<footer class="ftco-footer bg-bottom ftco-no-pt" id="footer" style="background-image: url(images/bg_3.jpg);">
 			<div class="container">
 				<div class="row mb-5">
 					<div class="col-md pt-5">
@@ -913,24 +1013,11 @@ VPA: 919037432640@federal</br>
 				</div>
 			</footer>
 			
-		<div class="footer1">
-  
-<a href="https://wa.me/+919037432640" target="_blank">
-<img src="images/w2.png" alt="WhatsApp"style="width:45px;background-color:white;border-color:white;border-radius:20px;margin:0px;"></a>
-<a href="tel:+919037432640"><img src="images/c3.jpg" alt="WhatsApp" style="width:45px;background-color:white;border-color:white;margin-left:295px;border-radius:20px;"></a>
-</footer1>	
-<style>
-.footer1 {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background:transparent;
-  color: white;
-}
-</style>
-
-
+		<!-- ============ FLOATING WHATSAPP / CALL ============ -->
+		<div class="tgh-floaters">
+			<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%27d%20like%20to%20enquire%20about%20a%20tour%20package." target="_blank" class="tgh-fl-wa tgh-pulse" aria-label="WhatsApp Us"><i class="fa fa-whatsapp"></i></a>
+			<a href="tel:+919037432640" class="tgh-fl-call" aria-label="Call Us"><i class="fa fa-phone"></i></a>
+		</div>
 
 			<!-- loader -->
 			<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -951,6 +1038,47 @@ VPA: 919037432640@federal</br>
 			<script src=></script>
 			<script src="js/google-map.js"></script>
 			<script src="js/main.js"></script>
-			
+
+			<!-- ===== Trip G Header/Hero behavior (namespaced, safe alongside main.js) ===== -->
+			<script>
+			(function(){
+				var tghNavwrap = document.getElementById('tghNavwrap');
+				window.addEventListener('scroll', function(){
+					tghNavwrap.classList.toggle('tgh-scrolled', window.scrollY > 10);
+				});
+
+				var tghBurger = document.getElementById('tghBurger');
+				var tghMenu = document.getElementById('tghMenu');
+				var tghOverlay = document.getElementById('tghOverlay');
+				var tghMenuClose = document.getElementById('tghMenuClose');
+				function tghCloseMenu(){ tghMenu.classList.remove('tgh-open'); tghOverlay.classList.remove('tgh-show'); }
+				tghBurger.addEventListener('click', function(){
+					tghMenu.classList.toggle('tgh-open');
+					tghOverlay.classList.toggle('tgh-show');
+				});
+				tghOverlay.addEventListener('click', tghCloseMenu);
+				tghMenuClose.addEventListener('click', tghCloseMenu);
+				document.querySelectorAll('.tgh-menu a').forEach(function(a){ a.addEventListener('click', tghCloseMenu); });
+
+				var tghSlides = document.querySelectorAll('.tgh-slide');
+				var tghDotsWrap = document.getElementById('tghDots');
+				var tghIndex = 0;
+				tghSlides.forEach(function(_, i){
+					var b = document.createElement('button');
+					if(i===0) b.classList.add('tgh-active');
+					b.addEventListener('click', function(){ tghShowSlide(i); });
+					tghDotsWrap.appendChild(b);
+				});
+				function tghShowSlide(i){
+					tghSlides[tghIndex].classList.remove('tgh-active');
+					tghDotsWrap.children[tghIndex].classList.remove('tgh-active');
+					tghIndex = i;
+					tghSlides[tghIndex].classList.add('tgh-active');
+					tghDotsWrap.children[tghIndex].classList.add('tgh-active');
+				}
+				setInterval(function(){ tghShowSlide((tghIndex + 1) % tghSlides.length); }, 5000);
+			})();
+			</script>
+
 		</body>
 		</html>
