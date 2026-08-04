@@ -149,11 +149,18 @@ tour operator tamilnadu
 	.tgh-icon-call:hover{background:var(--tgh-teal-deep);color:#fff;}
 	.tgh-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 18px;border-radius:100px;font-weight:700;font-size:.85rem;text-decoration:none;transition:.2s;}
 	.tgh-wa-btn:hover{background:#1fb956;color:#fff;transform:translateY(-2px);}
-	.tgh-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
-	.tgh-burger span{width:24px;height:2.5px;background:var(--tgh-teal-deep);border-radius:2px;transition:.3s;}
+	.tgh-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;}
+	.tgh-burger span{width:24px;height:2.5px;background:var(--tgh-teal-deep);border-radius:2px;transition:.3s;transform-origin:center;}
+	.tgh-burger.tgh-active span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+	.tgh-burger.tgh-active span:nth-child(2){opacity:0;}
+	.tgh-burger.tgh-active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
 	.tgh-menu-close{display:none;}
 	.tgh-overlay{position:fixed;inset:0;background:rgba(8,30,26,.5);z-index:190;opacity:0;pointer-events:none;transition:.3s;}
 	.tgh-overlay.tgh-show{opacity:1;pointer-events:auto;}
+	body.tgh-noscroll{overflow:hidden;}
+	html{-webkit-text-size-adjust:100%;}
+	body{overflow-x:hidden;}
+	img{max-width:100%;height:auto;}
 
 	.tgh-hero{position:relative;height:88vh;min-height:560px;overflow:hidden;font-family:'Manrope',sans-serif;}
 	.tgh-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;}
@@ -185,19 +192,51 @@ tour operator tamilnadu
 	.tgh-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;opacity:.55;animation:tgh-pulse 2s infinite;}
 	@keyframes tgh-pulse{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.7);opacity:0;}}
 
+	@media (max-width:991px){
+	  .tgh-brand img{width:40px;height:40px;}
+	  .tgh-brand-text .tgh-name{font-size:1.02rem;}
+	  .tgh-hero{height:78vh;}
+	}
 	@media (max-width:860px){
 	  .tgh-topbar-in{justify-content:center;text-align:center;}
 	  .tgh-topbar-left{justify-content:center;width:100%;}
-	  .tgh-menu{position:fixed;top:0;right:-100%;width:78%;max-width:300px;height:100vh;background:#fff;flex-direction:column;align-items:flex-start;padding:100px 30px 30px;gap:22px;transition:.35s;box-shadow:-10px 0 40px rgba(0,0,0,.15);z-index:220;}
+	  .tgh-menu{position:fixed;top:0;right:-100%;width:78%;max-width:300px;height:100vh;height:100dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fff;flex-direction:column;align-items:flex-start;padding:100px 30px 30px;gap:22px;transition:.35s;box-shadow:-10px 0 40px rgba(0,0,0,.15);z-index:220;}
 	  .tgh-menu.tgh-open{right:0;}
+	  .tgh-menu li{width:100%;}
+	  .tgh-menu a{display:block;font-size:1.02rem;}
 	  .tgh-wa-btn span{display:none;}
+	  .tgh-wa-btn{padding:11px 14px;}
 	  .tgh-burger{display:flex;}
-	  .tgh-menu-close{display:flex;align-items:center;justify-content:center;position:absolute;top:24px;right:24px;width:38px;height:38px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);border:none;font-size:1.6rem;line-height:1;cursor:pointer;transition:.2s;}
+	  .tgh-menu-close{display:flex;align-items:center;justify-content:center;position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);border:none;font-size:1.6rem;line-height:1;cursor:pointer;transition:.2s;}
 	  .tgh-menu-close:hover{background:var(--tgh-teal-deep);color:#fff;}
 	}
-	@media (max-width:560px){
-	  .tgh-hero{height:100vh;}
-	  .tgh-hero-content p{font-size:1rem;}
+	@media (max-width:767px){
+	  .tgh-hero{height:82vh;min-height:480px;}
+	  .tgh-hero-content{max-width:100%;}
+	  .tgh-hero-content p{max-width:100%;}
+	  .tgh-hero-btns{flex-direction:column;align-items:stretch;}
+	  .tgh-hero-btns .tgh-btn{width:100%;}
+	  .tgh-dots{display:none;}
+	  .ftco-footer .col-md.border-left{border-left:none!important;border-top:1px solid rgba(255,255,255,.08);margin-top:20px;padding-top:25px!important;}
+	}
+	@media (max-width:600px){
+	  .tgh-topbar-left{gap:10px;font-size:.72rem;}
+	  .tgh-topbar-left span:nth-child(2){display:none;}
+	  .tgh-topbar-right a{width:24px;height:24px;font-size:.72rem;}
+	  .tgh-nav{padding:10px 16px;}
+	  .tgh-brand-text .tgh-tag{display:none;}
+	  .tgh-hero-in{padding:0 18px;}
+	  .tgh-hero-content h1{font-size:clamp(1.7rem,7vw,2.3rem);}
+	  .tgh-hero-content p{font-size:.95rem;}
+	  .tgh-floaters{right:14px;bottom:14px;gap:10px;}
+	  .tgh-floaters a{width:48px;height:48px;font-size:1.25rem;}
+	}
+	@media (max-width:400px){
+	  .tgh-nav{padding:8px 12px;}
+	  .tgh-brand img{width:36px;height:36px;}
+	  .tgh-brand-text .tgh-name{font-size:.92rem;}
+	  .tgh-topbar-left{font-size:.68rem;}
+	  .tgh-menu{width:88%;padding:90px 22px 24px;}
 	}
 	</style>
 </head>
@@ -235,7 +274,7 @@ tour operator tamilnadu
 				<li><a href="index.html">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#destination">Destination</a></li>
-				<li><a href="#book">Booking</a></li>
+				<li><a href="#book-now">Booking</a></li>
 				<li><a href="#blog">Blog</a></li>
 				<li><a href="#footer">Contact</a></li>
 			</ul>
@@ -341,169 +380,351 @@ tour operator tamilnadu
 <style>
 .booking-section{
     position:relative;
-    padding:100px 20px;
-    background:url('images/s20.jpeg') center center/cover no-repeat;
+    padding:110px 20px;
+    background:linear-gradient(135deg, var(--tgh-teal-deep) 0%, var(--tgh-teal) 60%, #0e564d 100%);
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:700px;
     overflow:hidden;
+    font-family:'Manrope',sans-serif;
 }
 
-.booking-section::before{
+.booking-section::before,
+.booking-section::after{
     content:"";
     position:absolute;
-    inset:0;
-    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.45));
+    border-radius:50%;
+    background:rgba(232,163,61,.10);
+    pointer-events:none;
 }
+.booking-section::before{width:420px;height:420px;top:-160px;left:-140px;}
+.booking-section::after{width:320px;height:320px;bottom:-140px;right:-100px;background:rgba(255,255,255,.05);}
 
-.booking-card{
+.booking-wrap{
     position:relative;
     z-index:2;
     width:100%;
-    max-width:700px;
-    background:rgba(255,255,255,0.95);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    max-width:1080px;
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,.45);
+}
+
+.booking-info{
+    position:relative;
+    background:linear-gradient(160deg, var(--tgh-teal-deep), #0a3b35);
+    color:#EAF4F2;
+    padding:52px 44px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.booking-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    align-self:flex-start;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--tgh-saffron);
+    margin-bottom:16px;
+}
+.booking-badge::before{content:"";width:20px;height:2px;background:var(--tgh-saffron);display:inline-block;}
+
+.booking-info h2{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:2rem;
+    line-height:1.2;
+    color:#fff;
+    margin:0 0 14px;
+}
+
+.booking-info > p{
+    color:#C9DEDA;
+    font-size:.98rem;
+    line-height:1.65;
+    margin-bottom:26px;
+}
+
+.booking-points{
+    list-style:none;
+    margin:0 0 30px;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+.booking-points li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:.92rem;
+    color:#EAF4F2;
+}
+.booking-points li i{color:var(--tgh-saffron);font-size:1rem;}
+
+.booking-contact{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding-top:22px;
+    border-top:1px solid rgba(255,255,255,.14);
+}
+.booking-contact a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    font-size:.92rem;
+    transition:.2s;
+}
+.booking-contact a i{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+.booking-contact a:hover{color:var(--tgh-saffron);}
+
+.booking-card{
+    padding:52px 44px;
 }
 
 .booking-title{
-    text-align:center;
-    font-size:36px;
-    color:#0d47a1;
-    margin:0 0 10px;
+    text-align:left;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.6rem;
+    color:var(--tgh-ink);
+    margin:0 0 6px;
 }
 
 .booking-subtitle{
-    text-align:center;
-    color:#555;
-    margin-bottom:30px;
-    font-size:16px;
+    text-align:left;
+    color:var(--tgh-ink-soft);
+    margin-bottom:28px;
+    font-size:.94rem;
 }
 
 .booking-form{
     display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:16px;
 }
 
 .booking-row{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:18px;
+    gap:16px;
 }
+
+.booking-form label{
+    display:block;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--tgh-ink);
+    margin-bottom:6px;
+}
+
+.booking-field{width:100%;}
 
 .booking-form input,
 .booking-form select,
 .booking-form textarea{
     width:100%;
-    padding:15px 18px;
-    border:1px solid #d8d8d8;
+    padding:13px 16px;
+    border:1.5px solid #E3E7E6;
     border-radius:10px;
-    font-size:15px;
+    font-size:.92rem;
+    font-family:inherit;
     outline:none;
-    background:#fff;
-    transition:.3s;
+    background:#FAFBFB;
+    color:var(--tgh-ink);
+    transition:.25s;
     box-sizing:border-box;
 }
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder{color:#9AA8A5;}
 
 .booking-form input:focus,
 .booking-form select:focus,
 .booking-form textarea:focus{
-    border-color:#1976d2;
-    box-shadow:0 0 10px rgba(25,118,210,.25);
+    border-color:var(--tgh-saffron);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(232,163,61,.15);
 }
 
 .booking-form textarea{
     resize:vertical;
-    min-height:120px;
+    min-height:100px;
 }
 
 .booking-btn{
     border:none;
     padding:16px;
-    background:linear-gradient(135deg,#ff9800,#ff6f00);
-    color:#fff;
-    font-size:18px;
-    font-weight:600;
-    border-radius:50px;
+    margin-top:6px;
+    background:linear-gradient(135deg, var(--tgh-saffron), var(--tgh-saffron-dark));
+    color:var(--tgh-teal-deep);
+    font-size:1rem;
+    font-weight:700;
+    letter-spacing:.01em;
+    border-radius:100px;
     cursor:pointer;
-    transition:.3s;
+    transition:.25s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 }
 
 .booking-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 25px rgba(255,111,0,.35);
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px -8px rgba(232,163,61,.5);
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.booking-section{
-    padding:70px 15px;
-    min-height:auto;
+.booking-wrap{
+    grid-template-columns:1fr;
+    max-width:560px;
+}
+
+.booking-info{
+    padding:40px 32px;
 }
 
 .booking-card{
-    padding:25px;
+    padding:40px 32px;
 }
 
-.booking-title{
-    font-size:28px;
+}
+
+@media(max-width:600px){
+
+.booking-section{
+    padding:70px 16px;
+}
+
+.booking-info{
+    padding:34px 24px;
+}
+
+.booking-info h2{
+    font-size:1.6rem;
+}
+
+.booking-card{
+    padding:34px 24px;
 }
 
 .booking-row{
     grid-template-columns:1fr;
-    gap:15px;
+    gap:14px;
 }
 
 }
 </style>
 
-<section class="booking-section">
+<section class="booking-section" id="book-now">
 
-    <div class="booking-card">
+    <div class="booking-wrap">
 
-        <h2 class="booking-title">Book Your Dream Trip</h2>
-
-        <p class="booking-subtitle">
-            Fill in your details and our travel expert will contact you within 24 hours.
-        </p>
-
-        <form class="booking-form">
-
-            <input type="text" placeholder="Full Name" required>
-
-            <div class="booking-row">
-                <input type="tel" placeholder="Mobile Number" required>
-                <input type="email" placeholder="Email Address">
+        <div class="booking-info">
+            <span class="booking-badge">Plan With Us</span>
+            <h2>Let's Plan Your Perfect Trip</h2>
+            <p>Share a few details below and our travel expert will get back to you within 24 hours with a customized itinerary and the best price.</p>
+            <ul class="booking-points">
+                <li><i class="fa fa-check-circle"></i> Best Price Guarantee</li>
+                <li><i class="fa fa-check-circle"></i> Handpicked Hotels &amp; Stays</li>
+                <li><i class="fa fa-check-circle"></i> 24/7 Travel Support</li>
+            </ul>
+            <div class="booking-contact">
+                <a href="tel:+919037432640"><i class="fa fa-phone"></i> +91 90374 32640</a>
+                <a href="https://wa.me/919037432640" target="_blank"><i class="fa fa-whatsapp"></i> Chat on WhatsApp</a>
             </div>
+        </div>
 
-            <input type="text" placeholder="Destination" required>
+        <div class="booking-card">
 
-            <div class="booking-row">
-                <input type="date" required>
-                <input type="date" required>
-            </div>
+            <h3 class="booking-title">Book Your Dream Trip</h3>
 
-            <select required>
-                <option value="">Number of Travellers</option>
-                <option>1 Traveller</option>
-                <option>2 Travellers</option>
-                <option>3 Travellers</option>
-                <option>4 Travellers</option>
-                <option>5+ Travellers</option>
-            </select>
+            <p class="booking-subtitle">
+                Fill in your details and our travel expert will contact you within 24 hours.
+            </p>
 
-            <textarea placeholder="Special Requirements"></textarea>
+            <form class="booking-form">
 
-            <button type="submit" class="booking-btn">
-                ✈ Book My Trip
-            </button>
+                <div class="booking-field">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
 
-        </form>
+                <div class="booking-row">
+                    <div class="booking-field">
+                        <label>Mobile Number</label>
+                        <input type="tel" placeholder="Your mobile number" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Your email">
+                    </div>
+                </div>
+
+                <div class="booking-field">
+                    <label>Destination</label>
+                    <input type="text" placeholder="Where do you want to go?" required>
+                </div>
+
+                <div class="booking-row">
+                    <div class="booking-field">
+                        <label>Travel Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Return Date</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+
+                <div class="booking-field">
+                    <label>Number of Travellers</label>
+                    <select required>
+                        <option value="">Select travellers</option>
+                        <option>1 Traveller</option>
+                        <option>2 Travellers</option>
+                        <option>3 Travellers</option>
+                        <option>4 Travellers</option>
+                        <option>5+ Travellers</option>
+                    </select>
+                </div>
+
+                <div class="booking-field">
+                    <label>Special Requirements</label>
+                    <textarea placeholder="Tell us more about your trip"></textarea>
+                </div>
+
+                <button type="submit" class="booking-btn">
+                    <i class="fa fa-paper-plane"></i> Book My Trip
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
@@ -693,6 +914,161 @@ tour operator tamilnadu
 									<li><span class="flaticon-shower"></span>2</li>
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Sea</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s2.jpeg);">
+								<span class="price">Offer</span>
+							</a>
+							<div class="text p-4">
+								<span class="days">2 Days Tour</span>
+								<h3><a href="#">Rameshwaram Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Temple, Beach, Pilgrimage</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-sun-umbrella"></span>Near Sea</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s20.jpeg);">
+								<span class="price">Offer</span>
+							</a>
+							<div class="text p-4">
+								<span class="days">2 Days Tour</span>
+								<h3><a href="#">Madurai Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Meenakshi Temple, Heritage City</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-mountains"></span>City Tour</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s22.jpeg);">
+								<span class="price">Offer</span>
+							</a>
+							<div class="text p-4">
+								<span class="days">12 Days Tour</span>
+								<h3><a href="#">South Indian Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Kerala, Tamilnadu, Karnataka</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-mountains"></span>Multi State</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center pb-4">
+					<div class="col-md-12 heading-section text-center ftco-animate">
+						<span class="subheading">Beyond India</span>
+						<h2 class="mb-4">International Tour Packages</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s23.jpeg);"></a>
+							<div class="text p-4">
+								<span class="days">5 Days Tour</span>
+								<h3><a href="#">Dubai Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Desert Safari, City Tour, Shopping</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-sun-umbrella"></span>City Break</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s26.jpeg);"></a>
+							<div class="text p-4">
+								<span class="days">6 Days Tour</span>
+								<h3><a href="#">Singapore Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Sentosa, Gardens by the Bay</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-mountains"></span>City Tour</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s27.jpeg);"></a>
+							<div class="text p-4">
+								<span class="days">6 Days Tour</span>
+								<h3><a href="#">Malaysia Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Kuala Lumpur, Genting, Langkawi</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-mountains"></span>City Tour</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/s30.jpeg);"></a>
+							<div class="text p-4">
+								<span class="days">6 Days Tour</span>
+								<h3><a href="#">Thailand Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Bangkok, Pattaya, Islands</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/coorg.jpg);"></a>
+							<div class="text p-4">
+								<span class="days">7 Days Tour</span>
+								<h3><a href="#">Bali Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Ubud, Beaches, Temples</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 ftco-animate">
+						<div class="project-wrap">
+							<a href="#" class="img" style="background-image: url(images/poovar.jpg);"></a>
+							<div class="text p-4">
+								<span class="days">6 Days Tour</span>
+								<h3><a href="#">Sri Lanka Tour Package</a></h3>
+								<p class="location"><span class="fa fa-map-marker"></span> Kandy, Colombo, Nuwara Eliya</p>
+								<ul>
+									<li><span class="flaticon-shower"></span>2</li>
+									<li><span class="flaticon-king-size"></span>3</li>
+									<li><span class="flaticon-mountains"></span>Near Hills</li>
 								</ul>
 							</div>
 						</div>
@@ -1051,14 +1427,33 @@ tour operator tamilnadu
 				var tghMenu = document.getElementById('tghMenu');
 				var tghOverlay = document.getElementById('tghOverlay');
 				var tghMenuClose = document.getElementById('tghMenuClose');
-				function tghCloseMenu(){ tghMenu.classList.remove('tgh-open'); tghOverlay.classList.remove('tgh-show'); }
+				tghBurger.setAttribute('aria-expanded','false');
+				function tghOpenMenu(){
+					tghMenu.classList.add('tgh-open');
+					tghOverlay.classList.add('tgh-show');
+					tghBurger.classList.add('tgh-active');
+					tghBurger.setAttribute('aria-expanded','true');
+					document.body.classList.add('tgh-noscroll');
+				}
+				function tghCloseMenu(){
+					tghMenu.classList.remove('tgh-open');
+					tghOverlay.classList.remove('tgh-show');
+					tghBurger.classList.remove('tgh-active');
+					tghBurger.setAttribute('aria-expanded','false');
+					document.body.classList.remove('tgh-noscroll');
+				}
 				tghBurger.addEventListener('click', function(){
-					tghMenu.classList.toggle('tgh-open');
-					tghOverlay.classList.toggle('tgh-show');
+					if(tghMenu.classList.contains('tgh-open')){ tghCloseMenu(); } else { tghOpenMenu(); }
 				});
 				tghOverlay.addEventListener('click', tghCloseMenu);
 				tghMenuClose.addEventListener('click', tghCloseMenu);
 				document.querySelectorAll('.tgh-menu a').forEach(function(a){ a.addEventListener('click', tghCloseMenu); });
+				document.addEventListener('keydown', function(e){
+					if(e.key === 'Escape'){ tghCloseMenu(); }
+				});
+				window.addEventListener('resize', function(){
+					if(window.innerWidth > 860){ tghCloseMenu(); }
+				});
 
 				var tghSlides = document.querySelectorAll('.tgh-slide');
 				var tghDotsWrap = document.getElementById('tghDots');
