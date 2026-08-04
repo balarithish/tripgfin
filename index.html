@@ -135,16 +135,16 @@ tour operator tamilnadu
 	.tgh-navwrap{position:sticky;top:0;z-index:200;background:var(--tgh-sand);border-bottom:1px solid rgba(11,70,64,.1);font-family:'Manrope',sans-serif;transition:.3s;}
 	.tgh-navwrap.tgh-scrolled{box-shadow:0 8px 24px -12px rgba(11,70,64,.28);}
 	.tgh-nav{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;}
-	.tgh-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+	.tgh-brand{display:flex;align-items:center;gap:11px;text-decoration:none;order:3;}
 	.tgh-brand img{width:46px;height:46px;object-fit:cover;border-radius:12px;flex-shrink:0;}
 	.tgh-brand-text{line-height:1.15;}
 	.tgh-brand-text .tgh-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--tgh-teal-deep);display:block;}
 	.tgh-brand-text .tgh-tag{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tgh-ink-soft);}
-	.tgh-menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;}
+	.tgh-menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;order:2;}
 	.tgh-menu a{font-weight:600;font-size:.92rem;color:var(--tgh-ink);text-decoration:none;position:relative;padding:6px 0;}
 	.tgh-menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--tgh-saffron);transition:.25s;}
 	.tgh-menu a:hover::after{width:100%;}
-	.tgh-cta{display:flex;align-items:center;gap:10px;}
+	.tgh-cta{display:flex;align-items:center;gap:10px;order:1;}
 	.tgh-icon-call{width:42px;height:42px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:.2s;text-decoration:none;}
 	.tgh-icon-call:hover{background:var(--tgh-teal-deep);color:#fff;}
 	.tgh-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 18px;border-radius:100px;font-weight:700;font-size:.85rem;text-decoration:none;transition:.2s;}
@@ -200,8 +200,8 @@ tour operator tamilnadu
 	@media (max-width:860px){
 	  .tgh-topbar-in{justify-content:center;text-align:center;}
 	  .tgh-topbar-left{justify-content:center;width:100%;}
-	  .tgh-menu{position:fixed;top:0;right:-100%;width:78%;max-width:300px;height:100vh;height:100dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fff;flex-direction:column;align-items:flex-start;padding:100px 30px 30px;gap:22px;transition:.35s;box-shadow:-10px 0 40px rgba(0,0,0,.15);z-index:220;}
-	  .tgh-menu.tgh-open{right:0;}
+	  .tgh-menu{position:fixed;top:0;left:-100%;right:auto;width:78%;max-width:300px;height:100vh;height:100dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fff;flex-direction:column;align-items:flex-start;padding:100px 30px 30px;gap:22px;transition:.35s;box-shadow:10px 0 40px rgba(0,0,0,.15);z-index:220;}
+	  .tgh-menu.tgh-open{left:0;}
 	  .tgh-menu li{width:100%;}
 	  .tgh-menu a{display:block;font-size:1.02rem;}
 	  .tgh-wa-btn span{display:none;}
