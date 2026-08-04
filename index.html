@@ -144,6 +144,10 @@ tour operator tamilnadu
 	.tgh-menu a{font-weight:600;font-size:.92rem;color:var(--tgh-ink);text-decoration:none;position:relative;padding:6px 0;}
 	.tgh-menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--tgh-saffron);transition:.25s;}
 	.tgh-menu a:hover::after{width:100%;}
+	.tgh-menu a.tgh-menu-book{background:var(--tgh-saffron);color:var(--tgh-teal-deep);padding:9px 20px;border-radius:100px;transition:.25s;}
+	.tgh-menu a.tgh-menu-book::after{display:none;}
+	.tgh-menu a.tgh-menu-book:hover{background:var(--tgh-saffron-dark);transform:translateY(-2px);}
+	@media (max-width:860px){.tgh-menu a.tgh-menu-book{display:inline-block;}}
 	.tgh-cta{display:flex;align-items:center;gap:10px;order:1;}
 	.tgh-icon-call{width:42px;height:42px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:.2s;text-decoration:none;}
 	.tgh-icon-call:hover{background:var(--tgh-teal-deep);color:#fff;}
@@ -158,9 +162,11 @@ tour operator tamilnadu
 	.tgh-overlay{position:fixed;inset:0;background:rgba(8,30,26,.5);z-index:190;opacity:0;pointer-events:none;transition:.3s;}
 	.tgh-overlay.tgh-show{opacity:1;pointer-events:auto;}
 	body.tgh-noscroll{overflow:hidden;}
-	html{-webkit-text-size-adjust:100%;}
+	html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
 	body{overflow-x:hidden;}
+	@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
 	img{max-width:100%;height:auto;}
+	section[id],div[id]{scroll-margin-top:90px;}
 
 	.tgh-hero{position:relative;height:88vh;min-height:560px;overflow:hidden;font-family:'Manrope',sans-serif;}
 	.tgh-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;}
@@ -238,7 +244,17 @@ tour operator tamilnadu
 	  .tgh-topbar-left{font-size:.68rem;}
 	  .tgh-menu{width:88%;padding:90px 22px 24px;}
 	}
-	</style>
+	
+.tgh-pkg-features{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px;padding:0;list-style:none;}
+.tgh-pkg-features span{display:inline-flex;align-items:center;gap:5px;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);font-size:.72rem;font-weight:700;padding:5px 10px;border-radius:100px;}
+.tgh-pkg-features span i{color:var(--tgh-saffron-dark);}
+.tgh-pkg-price{display:block;font-family:'Fraunces',serif;font-weight:700;color:var(--tgh-teal-deep);font-size:1.05rem;margin-bottom:6px;}
+.tgh-pkg-price small{font-weight:500;color:var(--tgh-ink-soft);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;}
+.tgh-pkg-book{display:inline-flex;align-items:center;gap:8px;background:var(--tgh-saffron);color:var(--tgh-teal-deep)!important;font-weight:700;font-size:.85rem;padding:11px 22px;border-radius:100px;text-decoration:none;transition:.25s;border:none;}
+.tgh-pkg-book:hover{background:var(--tgh-saffron-dark);transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(232,163,61,.5);}
+.project-wrap{transition:transform .3s ease, box-shadow .3s ease;}
+.project-wrap:hover{transform:translateY(-8px);box-shadow:0 24px 40px -18px rgba(11,70,64,.35);}
+</style>
 </head>
 <body>
 	<!-- ============ TOP SOCIAL/UTILITY BAR ============ -->
@@ -273,10 +289,13 @@ tour operator tamilnadu
 				<button class="tgh-menu-close" id="tghMenuClose" aria-label="Close menu">&times;</button>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="#about">About</a></li>
-				<li><a href="#destination">Destination</a></li>
-				<li><a href="#book-now">Booking</a></li>
+				<li><a href="#south-india">South India Packages</a></li>
+				<li><a href="#international">International Packages</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#gallery">Gallery</a></li>
 				<li><a href="#blog">Blog</a></li>
 				<li><a href="#footer">Contact</a></li>
+				<li><a href="#booking" class="tgh-menu-book">Book Now</a></li>
 			</ul>
 
 			<div class="tgh-cta">
@@ -330,7 +349,7 @@ tour operator tamilnadu
 							<p><a href="#" class="btn btn-primary py-3 px-4">Search Destination</a></p>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6" id="services">
 						<div class="row">
 							<div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
 								<div class="services services-1 color-1 d-block img" style="background-image: url(images/s30.jpeg);">
@@ -640,7 +659,7 @@ tour operator tamilnadu
 }
 </style>
 
-<section class="booking-section" id="book-now">
+<section class="booking-section" id="booking">
 
     <div class="booking-wrap">
 
@@ -756,11 +775,7 @@ tour operator tamilnadu
 								<span class="days">2 Days Tour</span>
 								<h3><a href="#">Rameshwaram Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Temple, Beach, Pilgrimage</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Sea</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 4,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -773,11 +788,7 @@ tour operator tamilnadu
 								<span class="days">2 Days Tour</span>
 								<h3><a href="#">Madurai Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Meenakshi Temple, Heritage City</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-mountains"></span>City Tour</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 5,499 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -790,11 +801,7 @@ tour operator tamilnadu
 								<span class="days">12 Days Tour</span>
 								<h3><a href="#">South Indian Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Kerala, Tamilnadu, Karnataka</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-mountains"></span>Multi State</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 24,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -808,11 +815,7 @@ tour operator tamilnadu
 								<span class="days">8 Days Tour</span>
 								<h3><a href="#">Kerala Premium Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Boat House,Hills,Backwaters</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-mountains"></span>Near Mountain</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 16,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -825,11 +828,7 @@ tour operator tamilnadu
 								<span class="days">10 Days Tour</span>
 								<h3><a href="#">Kerala Explore Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Mountains, Hills, Estates,</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Hills</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 19,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -842,11 +841,7 @@ tour operator tamilnadu
 								<span class="days">7 Days Tour</span>
 								<h3><a href="#">Herala Heritage Tour</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Visit Heritage Places</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Villages</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 13,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -860,11 +855,7 @@ tour operator tamilnadu
 								<span class="days">3 Days Tour</span>
 								<h3><a href="#">Honeymoon Packages</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Beaches, Boat House, Backwaters</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 6,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -877,11 +868,7 @@ tour operator tamilnadu
 								<span class="days">10 Days Tour</span>
 								<h3><a href="#">Munnar Special</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span>Hills, Tea Estate, Admiring Places</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Hills</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 21,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -894,11 +881,7 @@ tour operator tamilnadu
 								<span class="days">7 Days Tour</span>
 								<h3><a href="#">Kerala - Tamilnadu Tour</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Kerala-Tamilnadu Temple Tour</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Sea</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 14,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -908,6 +891,209 @@ tour operator tamilnadu
 		</section>
 
 
+
+
+	<!-- ============ SOUTH INDIAN TOUR PACKAGES ============ -->
+	<style>
+	.tgh-southindia{padding:100px 0;background:var(--tgh-sand);font-family:'Manrope',sans-serif;}
+	.tgh-si-head{max-width:760px;margin:0 auto 50px;text-align:center;padding:0 20px;}
+	.tgh-si-head .booking-badge{justify-content:center;display:inline-flex;}
+	.tgh-si-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--tgh-teal-deep);margin:10px 0 16px;}
+	.tgh-si-head p{color:var(--tgh-ink-soft);font-size:1rem;line-height:1.7;}
+	.tgh-si-col{margin-bottom:30px;}
+	.tgh-si-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px -18px rgba(11,70,64,.25);transition:transform .3s ease, box-shadow .3s ease;height:100%;}
+	.tgh-si-card:hover{transform:translateY(-8px);box-shadow:0 26px 42px -18px rgba(11,70,64,.35);}
+	.tgh-si-img{height:190px;background-size:cover;background-position:center;position:relative;transition:transform .4s ease;}
+	.tgh-si-card:hover .tgh-si-img{transform:scale(1.04);}
+	.tgh-si-badge{position:absolute;top:14px;left:14px;background:rgba(232,163,61,.95);color:var(--tgh-teal-deep);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:100px;}
+	.tgh-si-body{padding:20px 20px 24px;}
+	.tgh-si-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--tgh-teal-deep);margin:0 0 8px;}
+	.tgh-si-body p{color:var(--tgh-ink-soft);font-size:.88rem;line-height:1.55;margin-bottom:18px;min-height:63px;}
+	.tgh-si-btns{display:flex;gap:10px;flex-wrap:wrap;}
+	.tgh-si-view,.tgh-si-book{flex:1;text-align:center;font-size:.8rem;font-weight:700;padding:10px 14px;border-radius:100px;text-decoration:none;transition:.25s;white-space:nowrap;}
+	.tgh-si-view{border:1.5px solid var(--tgh-teal-deep);color:var(--tgh-teal-deep);background:transparent;}
+	.tgh-si-view:hover{background:var(--tgh-teal-deep);color:#fff;}
+	.tgh-si-book{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
+	.tgh-si-book:hover{background:var(--tgh-saffron-dark);color:var(--tgh-teal-deep);}
+	@media(max-width:575px){.tgh-si-btns{flex-direction:column;}}
+	</style>
+	<section class="tgh-southindia" id="south-india">
+		<div class="container-fluid" style="max-width:1280px;">
+			<div class="tgh-si-head">
+				<span class="booking-badge" style="color:var(--tgh-saffron-dark);">Explore South India</span>
+				<h2>South Indian Tour Packages</h2>
+				<p>Discover the beauty of South India with Trip G Travels. Explore ancient temples, scenic hill stations, serene backwaters, beaches, wildlife sanctuaries, and cultural heritage. We offer customizable family tours, honeymoon packages, pilgrimage trips, and group holidays across Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, and Telangana.</p>
+			</div>
+			<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/nayakar.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Madurai</h3>
+								<p>Home of the magnificent Meenakshi Amman Temple and vibrant heritage streets.</p>
+								<div class="tgh-si-btns">
+									<a href="#madurai" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/rama.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Rameshwaram</h3>
+								<p>A sacred pilgrimage island famed for the Ramanathaswamy Temple and pristine beaches.</p>
+								<div class="tgh-si-btns">
+									<a href="#rameshwaram" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/thiru.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Kanyakumari</h3>
+								<p>Witness the meeting of three seas and unforgettable sunrise-sunset views.</p>
+								<div class="tgh-si-btns">
+									<a href="#kanyakumari" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/munnar.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Munnar</h3>
+								<p>Rolling tea estates, misty hills and cool weather in Kerala's favourite hill station.</p>
+								<div class="tgh-si-btns">
+									<a href="#munnar" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/boat.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Alleppey</h3>
+								<p>Cruise the tranquil backwaters aboard a traditional Kerala houseboat.</p>
+								<div class="tgh-si-btns">
+									<a href="#alleppey" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/s26.jpeg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Thekkady</h3>
+								<p>Explore the wild trails and spice plantations of Periyar Wildlife Sanctuary.</p>
+								<div class="tgh-si-btns">
+									<a href="#thekkady" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/s22.jpeg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Ooty</h3>
+								<p>The Queen of Hill Stations with botanical gardens and toy-train charm.</p>
+								<div class="tgh-si-btns">
+									<a href="#ooty" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/rise.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Kodaikanal</h3>
+								<p>A serene lake-side hill town wrapped in pine forests and rolling mist.</p>
+								<div class="tgh-si-btns">
+									<a href="#kodaikanal" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/coorg.jpg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Coorg</h3>
+								<p>Coffee-scented hills, waterfalls and lush greenery in Karnataka's Scotland.</p>
+								<div class="tgh-si-btns">
+									<a href="#coorg" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/s15.jpeg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Mysore</h3>
+								<p>Royal palaces, bustling markets and rich Karnataka heritage await.</p>
+								<div class="tgh-si-btns">
+									<a href="#mysore" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 tgh-si-col ftco-animate">
+						<div class="tgh-si-card">
+							<div class="tgh-si-img" style="background-image:url('images/s23.jpeg');">
+								<span class="tgh-si-badge">South India</span>
+							</div>
+							<div class="tgh-si-body">
+								<h3>Wayanad</h3>
+								<p>Wildlife sanctuaries, caves and waterfalls in Kerala's forested north.</p>
+								<div class="tgh-si-btns">
+									<a href="#wayanad" class="tgh-si-view">View Package</a>
+									<a href="#booking" class="tgh-si-book">Book Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	<!-- ============ END SOUTH INDIAN TOUR PACKAGES ============ -->
 
 		<section class="ftco-section img ftco-select-destination" style="background-image: url(images/services-1.jpg);" id="destination">
 			<div class="container">
@@ -978,7 +1164,7 @@ tour operator tamilnadu
 			</div>
 		</section>
 	
-		<section class="ftco-section">
+		<section class="ftco-section" id="international">
 			<div class="container">
 				<div class="row justify-content-center pb-4">
 					<div class="col-md-12 heading-section text-center ftco-animate">
@@ -994,11 +1180,7 @@ tour operator tamilnadu
 								<span class="days">5 Days Tour</span>
 								<h3><a href="#">Dubai Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Desert Safari, City Tour, Shopping</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>City Break</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 34,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -1009,11 +1191,7 @@ tour operator tamilnadu
 								<span class="days">6 Days Tour</span>
 								<h3><a href="#">Singapore Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Sentosa, Gardens by the Bay</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-mountains"></span>City Tour</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 38,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -1024,11 +1202,7 @@ tour operator tamilnadu
 								<span class="days">6 Days Tour</span>
 								<h3><a href="#">Malaysia Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Kuala Lumpur, Genting, Langkawi</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-mountains"></span>City Tour</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 32,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -1039,11 +1213,7 @@ tour operator tamilnadu
 								<span class="days">6 Days Tour</span>
 								<h3><a href="#">Thailand Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Bangkok, Pattaya, Islands</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 29,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -1054,11 +1224,7 @@ tour operator tamilnadu
 								<span class="days">7 Days Tour</span>
 								<h3><a href="#">Bali Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Ubud, Beaches, Temples</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 31,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -1069,11 +1235,7 @@ tour operator tamilnadu
 								<span class="days">6 Days Tour</span>
 								<h3><a href="#">Sri Lanka Tour Package</a></h3>
 								<p class="location"><span class="fa fa-map-marker"></span> Kandy, Colombo, Nuwara Eliya</p>
-								<ul>
-									<li><span class="flaticon-shower"></span>2</li>
-									<li><span class="flaticon-king-size"></span>3</li>
-									<li><span class="flaticon-mountains"></span>Near Hills</li>
-								</ul>
+								<div class="tgh-pkg-price"><small>Starting from</small>Rs. 42,999 / person</div><ul class="tgh-pkg-features"><li><span><i class="fa fa-building"></i> Hotel</span></li><li><span><i class="fa fa-car"></i> Cab</span></li><li><span><i class="fa fa-binoculars"></i> Sightseeing</span></li><li><span><i class="fa fa-cutlery"></i> Breakfast</span></li></ul><a href="#booking" class="tgh-pkg-book"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 							</div>
 						</div>
 					</div>
@@ -1296,6 +1458,39 @@ tour operator tamilnadu
 			</div>
 		</section>
 
+		<!-- ============ GALLERY ============ -->
+		<style>
+		.tgh-gallery{padding:100px 0;background:#fff;font-family:'Manrope',sans-serif;}
+		.tgh-gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1220px;margin:0 auto;padding:0 24px;}
+		.tgh-gallery-item{position:relative;border-radius:14px;overflow:hidden;height:220px;cursor:pointer;}
+		.tgh-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+		.tgh-gallery-item:hover img{transform:scale(1.08);}
+		.tgh-gallery-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,26,0) 50%,rgba(11,29,26,.55) 100%);opacity:0;transition:.3s;}
+		.tgh-gallery-item:hover::after{opacity:1;}
+		.tgh-gallery-item:nth-child(1),.tgh-gallery-item:nth-child(6){grid-row:span 2;height:456px;}
+		@media(max-width:991px){.tgh-gallery-grid{grid-template-columns:repeat(3,1fr);}.tgh-gallery-item:nth-child(1),.tgh-gallery-item:nth-child(6){height:220px;grid-row:span 1;}}
+		@media(max-width:600px){.tgh-gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px;}.tgh-gallery-item{height:150px;}}
+		</style>
+		<section class="tgh-gallery" id="gallery">
+			<div class="row justify-content-center pb-4" style="margin:0 0 40px;">
+				<div class="col-md-12 heading-section text-center ftco-animate">
+					<span class="subheading">Moments With Us</span>
+					<h2 class="mb-4">Photo Gallery</h2>
+				</div>
+			</div>
+			<div class="tgh-gallery-grid">
+				<div class="tgh-gallery-item"><img src="images/munnar1.jpg" alt="Munnar hills"></div>
+				<div class="tgh-gallery-item"><img src="images/poovar.jpg" alt="Poovar backwaters"></div>
+				<div class="tgh-gallery-item"><img src="images/coorg.jpg" alt="Coorg"></div>
+				<div class="tgh-gallery-item"><img src="images/boat.jpg" alt="Houseboat"></div>
+				<div class="tgh-gallery-item"><img src="images/rama.jpg" alt="Rameshwaram"></div>
+				<div class="tgh-gallery-item"><img src="images/thiru.jpg" alt="Kanyakumari"></div>
+				<div class="tgh-gallery-item"><img src="images/s22.jpeg" alt="Ooty"></div>
+				<div class="tgh-gallery-item"><img src="images/s15.jpeg" alt="Mysore"></div>
+			</div>
+		</section>
+		<!-- ============ END GALLERY ============ -->
+
 		<section class="ftco-intro ftco-section ftco-no-pt">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -1327,71 +1522,96 @@ tour operator tamilnadu
 </section>
 
 
-		<footer class="ftco-footer bg-bottom ftco-no-pt" id="footer" style="background-image: url(images/bg_3.jpg);">
-			<div class="container">
-				<div class="row mb-5">
-					<div class="col-md pt-5">
-						<div class="ftco-footer-widget pt-md-5 mb-4">
-							<h2 class="ftco-heading-2">About</h2>
-							<p>Trip G Travels , No one South Indian Tour Operator, in South Indian Tour, we are mainly concentrate on Kerala, Tamilnadu packages and International Tour</p>
-							<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-								
-								<li class="ftco-animate"><a href="https://www.facebook.com/share/1CeniYqeAb/"><span class="fa fa-facebook"></span></a></li>
-								<li class="ftco-animate"><a href="https://www.instagram.com/trip_g_travels?igsh=MXNsZmdtdWF4c2RsYg=="><span class="fa fa-instagram"></span></a></li>
- 
-
-</ul>
+		<!-- ============ PREMIUM FOOTER ============ -->
+		<style>
+		.tgh-footer{background:linear-gradient(160deg,#0B1F2A 0%,#0B4640 55%,#123B33 100%);color:#DCEAE7;font-family:'Manrope',sans-serif;padding:80px 0 0;position:relative;overflow:hidden;}
+		.tgh-footer::before{content:"";position:absolute;top:-120px;right:-120px;width:340px;height:340px;border-radius:50%;background:rgba(232,163,61,.08);}
+		.tgh-footer-in{max-width:1220px;margin:0 auto;padding:0 24px;position:relative;z-index:2;}
+		.tgh-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);}
+		.tgh-footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px;text-decoration:none;}
+		.tgh-footer-brand img{width:48px;height:48px;object-fit:cover;border-radius:12px;}
+		.tgh-footer-brand span{font-family:'Fraunces',serif;font-weight:700;font-size:1.2rem;color:#fff;}
+		.tgh-footer-about p{color:#B9D2CC;font-size:.92rem;line-height:1.7;margin-bottom:22px;}
+		.tgh-footer h4{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:#fff;margin-bottom:20px;position:relative;}
+		.tgh-footer ul{list-style:none;margin:0;padding:0;}
+		.tgh-footer ul li{margin-bottom:12px;}
+		.tgh-footer ul li a{color:#B9D2CC;text-decoration:none;font-size:.9rem;transition:.2s;display:inline-flex;align-items:center;gap:8px;}
+		.tgh-footer ul li a:hover{color:var(--tgh-saffron);transform:translateX(3px);}
+		.tgh-footer-social{display:flex;gap:12px;margin-top:8px;}
+		.tgh-footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#DCEAE7;text-decoration:none;transition:.25s;}
+		.tgh-footer-social a:hover{background:var(--tgh-saffron);color:var(--tgh-teal-deep);transform:translateY(-3px);}
+		.tgh-footer-contact li{display:flex;align-items:flex-start;gap:10px;color:#B9D2CC;font-size:.9rem;margin-bottom:16px;}
+		.tgh-footer-contact li i{width:32px;height:32px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--tgh-saffron);}
+		.tgh-footer-contact li a{color:#B9D2CC;text-decoration:none;transition:.2s;}
+		.tgh-footer-contact li a:hover{color:var(--tgh-saffron);}
+		.tgh-footer-cta{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;}
+		.tgh-footer-cta a{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:700;padding:9px 16px;border-radius:100px;text-decoration:none;transition:.25s;}
+		.tgh-footer-cta .tgh-fc-wa{background:#25D366;color:#fff;}
+		.tgh-footer-cta .tgh-fc-wa:hover{background:#1fb956;transform:translateY(-2px);}
+		.tgh-footer-cta .tgh-fc-call{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
+		.tgh-footer-cta .tgh-fc-call:hover{background:var(--tgh-saffron-dark);transform:translateY(-2px);}
+		.tgh-footer-bottom{padding:22px 24px;text-align:center;font-size:.82rem;color:#9FBBB4;position:relative;z-index:2;}
+		.tgh-footer-bottom a{color:var(--tgh-saffron);text-decoration:none;}
+		@media(max-width:991px){.tgh-footer-grid{grid-template-columns:1fr 1fr;}}
+		@media(max-width:600px){.tgh-footer-grid{grid-template-columns:1fr;gap:34px;}.tgh-footer{padding:60px 0 0;}}
+		</style>
+		<footer class="tgh-footer" id="footer">
+			<div class="tgh-footer-in">
+				<div class="tgh-footer-grid">
+					<div class="tgh-footer-about">
+						<a href="index.html" class="tgh-footer-brand">
+							<img src="images/logo.jpg" alt="Trip G Travels logo">
+							<span>Trip G Travels</span>
+						</a>
+						<p>Trip G Travels is a leading South Indian tour operator, specialising in Kerala and Tamil Nadu holiday packages along with curated international tours. We craft memorable, hassle-free journeys for families, couples and groups.</p>
+						<div class="tgh-footer-social">
+							<a href="https://www.facebook.com/share/1CeniYqeAb/" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+							<a href="https://www.instagram.com/trip_g_travels?igsh=MXNsZmdtdWF4c2RsYg==" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+							<a href="https://youtube.com/@tripgtravels" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+							<a href="https://wa.me/919037432640" target="_blank" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
 						</div>
 					</div>
-					<div class="col-md pt-5 border-left">
-						<div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
-							<h2 class="ftco-heading-2">Infromation</h2>
-							<ul class="list-unstyled">
-								<li><a href="#" class="py-2 d-block">Online Enquiry</a></li>
-								<li><a href="#" class="py-2 d-block">General Enquiries</a></li>
-								<li><a href="#" class="py-2 d-block">Booking Conditions</a></li>
-								<li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
-								<li><a href="#" class="py-2 d-block">Refund Policy</a></li>
-								<li><a href="#" class="py-2 d-block">Call Us</a></li>
-							</ul>
-						</div>
+					<div class="tgh-footer-links">
+						<h4>Quick Links</h4>
+						<ul>
+							<li><a href="index.html"><i class="fa fa-angle-right"></i> Home</a></li>
+							<li><a href="#about"><i class="fa fa-angle-right"></i> About Us</a></li>
+							<li><a href="#gallery"><i class="fa fa-angle-right"></i> Gallery</a></li>
+							<li><a href="#blog"><i class="fa fa-angle-right"></i> Blog</a></li>
+							<li><a href="#footer"><i class="fa fa-angle-right"></i> Contact</a></li>
+							<li><a href="#booking"><i class="fa fa-angle-right"></i> Book Now</a></li>
+						</ul>
 					</div>
-					<div class="col-md pt-5 border-left">
-						<div class="ftco-footer-widget pt-md-5 mb-4">
-							<h2 class="ftco-heading-2">Experience</h2>
-							<ul class="list-unstyled">
-								<li><a href="#" class="py-2 d-block">Adventure</a></li>
-								<li><a href="#" class="py-2 d-block">Hotel and Restaurant</a></li>
-								<li><a href="#" class="py-2 d-block">Beach</a></li>
-								<li><a href="#" class="py-2 d-block">Nature</a></li>
-								<li><a href="#" class="py-2 d-block">Camping</a></li>
-								<li><a href="#" class="py-2 d-block">Party</a></li>
-							</ul>
-						</div>
+					<div class="tgh-footer-packages">
+						<h4>Tour Packages</h4>
+						<ul>
+							<li><a href="#south-india"><i class="fa fa-angle-right"></i> South India Packages</a></li>
+							<li><a href="#international"><i class="fa fa-angle-right"></i> International Packages</a></li>
+							<li><a href="#services"><i class="fa fa-angle-right"></i> Our Services</a></li>
+							<li><a href="#south-india"><i class="fa fa-angle-right"></i> Honeymoon Packages</a></li>
+							<li><a href="#south-india"><i class="fa fa-angle-right"></i> Family Tours</a></li>
+							<li><a href="#south-india"><i class="fa fa-angle-right"></i> Pilgrimage Trips</a></li>
+						</ul>
 					</div>
-					<div class="col-md pt-5 border-left">
-						<div class="ftco-footer-widget pt-md-5 mb-4">
-							<h2 class="ftco-heading-2">Have a Questions?</h2>
-							<div class="block-23 mb-3">
-								<ul>
-									<li><span class="icon fa fa-map-marker"></span><span class="text">Neyyatinkara Road, Near Poovar Bridge,Kerala-695525</span></li>
-									<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+91-9037432640</span></a></li>
-									<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">tripgtravels01@gmail.com</span></a></li>
-								</ul>
-							</div>
+					<div class="tgh-footer-contact-wrap">
+						<h4>Contact Us</h4>
+						<ul class="tgh-footer-contact">
+							<li><i class="fa fa-map-marker"></i> <span>Neyyatinkara Road, Near Poovar Bridge, Kerala - 695525</span></li>
+							<li><i class="fa fa-phone"></i> <a href="tel:+919037432640">+91 90374 32640</a></li>
+							<li><i class="fa fa-envelope"></i> <a href="mailto:tripgtravels01@gmail.com">tripgtravels01@gmail.com</a></li>
+						</ul>
+						<div class="tgh-footer-cta">
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%27d%20like%20to%20enquire%20about%20a%20tour%20package." target="_blank" class="tgh-fc-wa"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+							<a href="tel:+919037432640" class="tgh-fc-call"><i class="fa fa-phone"></i> Call Now</a>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
-
-						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Trip G Travels</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-						</div>
-					</div>
-				</div>
-			</footer>
+			</div>
+			<div class="tgh-footer-bottom">
+				Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a href="index.html">Trip G Travels</a>. All rights reserved.
+			</div>
+		</footer>
+		<!-- ============ END PREMIUM FOOTER ============ -->
 			
 		<!-- ============ FLOATING WHATSAPP / CALL ============ -->
 		<div class="tgh-floaters">
