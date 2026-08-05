@@ -135,16 +135,16 @@ tour operator tamilnadu
 	.tgh-navwrap{position:sticky;top:0;z-index:200;background:var(--tgh-sand);border-bottom:1px solid rgba(11,70,64,.1);font-family:'Manrope',sans-serif;transition:.3s;}
 	.tgh-navwrap.tgh-scrolled{box-shadow:0 8px 24px -12px rgba(11,70,64,.28);}
 	.tgh-nav{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;}
-	.tgh-brand{display:flex;align-items:center;gap:11px;text-decoration:none;order:3;}
+	.tgh-brand{display:flex;align-items:center;gap:11px;text-decoration:none;order:1;}
 	.tgh-brand img{width:46px;height:46px;object-fit:cover;border-radius:12px;flex-shrink:0;}
 	.tgh-brand-text{line-height:1.15;}
 	.tgh-brand-text .tgh-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--tgh-teal-deep);display:block;}
 	.tgh-brand-text .tgh-tag{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tgh-ink-soft);}
-	.tgh-menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;order:2;}
+	.tgh-menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;order:2;margin-left:auto;margin-right:26px;}
 	.tgh-menu a{font-weight:600;font-size:.92rem;color:var(--tgh-ink);text-decoration:none;position:relative;padding:6px 0;}
 	.tgh-menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--tgh-saffron);transition:.25s;}
 	.tgh-menu a:hover::after{width:100%;}
-	.tgh-cta{display:flex;align-items:center;gap:10px;order:1;}
+	.tgh-cta{display:flex;align-items:center;gap:10px;order:3;}
 	.tgh-icon-call{width:42px;height:42px;border-radius:50%;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:.2s;text-decoration:none;}
 	.tgh-icon-call:hover{background:var(--tgh-teal-deep);color:#fff;}
 	.tgh-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 18px;border-radius:100px;font-weight:700;font-size:.85rem;text-decoration:none;transition:.2s;}
@@ -238,6 +238,56 @@ tour operator tamilnadu
 	  .tgh-topbar-left{font-size:.68rem;}
 	  .tgh-menu{width:88%;padding:90px 22px 24px;}
 	}
+
+	/* ===== Package card booking actions ===== */
+	.tgh-pkg-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+	.tgh-pkg-book,.tgh-pkg-enquire{flex:1;min-width:120px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 14px;border-radius:8px;font-weight:700;font-size:.85rem;text-decoration:none;transition:.22s ease;font-family:'Manrope',sans-serif;}
+	.tgh-pkg-book{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
+	.tgh-pkg-book:hover{background:var(--tgh-saffron-dark);color:#fff;transform:translateY(-2px);}
+	.tgh-pkg-enquire{background:transparent;border:1.5px solid var(--tgh-teal);color:var(--tgh-teal);}
+	.tgh-pkg-enquire:hover{background:var(--tgh-teal);color:#fff;transform:translateY(-2px);}
+	@media (max-width:400px){
+	  .tgh-pkg-actions{flex-direction:column;}
+	}
+
+	/* ===== Trip Features section ===== */
+	.tgh-features{background:var(--tgh-sand);padding:80px 20px;font-family:'Manrope',sans-serif;}
+	.tgh-features-in{max-width:1220px;margin:0 auto;}
+	.tgh-features-head{text-align:center;max-width:600px;margin:0 auto 46px;}
+	.tgh-features-head span{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tgh-saffron-dark);margin-bottom:10px;}
+	.tgh-features-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,3.4vw,2.4rem);color:var(--tgh-teal-deep);margin-bottom:12px;}
+	.tgh-features-head p{color:var(--tgh-ink-soft);line-height:1.6;}
+	.tgh-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+	.tgh-feature-card{background:#fff;border-radius:16px;padding:32px 26px;box-shadow:0 14px 34px -18px rgba(11,70,64,.22);transition:.25s ease;border:1px solid rgba(11,70,64,.06);}
+	.tgh-feature-card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -18px rgba(11,70,64,.3);}
+	.tgh-feature-icon{width:56px;height:56px;border-radius:14px;background:var(--tgh-teal-soft);color:var(--tgh-teal-deep);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px;}
+	.tgh-feature-card h3{font-family:'Fraunces',serif;font-size:1.12rem;color:var(--tgh-ink);margin-bottom:8px;font-weight:600;}
+	.tgh-feature-card p{font-size:.92rem;color:var(--tgh-ink-soft);line-height:1.6;margin:0;}
+	@media (max-width:900px){
+	  .tgh-features-grid{grid-template-columns:repeat(2,1fr);}
+	}
+	@media (max-width:600px){
+	  .tgh-features{padding:56px 16px;}
+	  .tgh-features-grid{grid-template-columns:1fr;}
+	}
+
+	/* ===== Footer background override ===== */
+	.tgh-footer-bg{background:linear-gradient(160deg,#062822 0%,var(--tgh-teal-deep) 55%,#0e564d 100%)!important;position:relative;}
+	.tgh-footer-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%, rgba(232,163,61,.10), transparent 45%),radial-gradient(circle at 85% 80%, rgba(232,163,61,.08), transparent 50%);pointer-events:none;}
+	.tgh-footer-bg .container{position:relative;z-index:2;}
+
+	/* ===== Floating buttons (right side, responsive) ===== */
+	.floating-buttons{position:fixed;right:20px;bottom:26px;left:auto;display:flex;flex-direction:column;gap:12px;z-index:9999;}
+	.floating-buttons a{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;text-decoration:none;box-shadow:0 10px 24px -6px rgba(0,0,0,.4);transition:.2s ease;}
+	.floating-buttons a:hover{transform:scale(1.08);}
+	.floating-buttons a.whatsapp{background:#25D366;}
+	.floating-buttons a.call{background:var(--tgh-teal-deep);}
+	.back-to-top{position:fixed;right:20px;bottom:100px;z-index:9998;}
+	@media (max-width:600px){
+	  .floating-buttons{right:14px;bottom:80px;gap:10px;}
+	  .floating-buttons a{width:48px;height:48px;font-size:1.25rem;}
+	  .back-to-top{right:14px;bottom:150px;}
+	}
 	</style>
 </head>
 <body>
@@ -274,6 +324,7 @@ tour operator tamilnadu
 				<li><a href="index.html">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#destination">Destination</a></li>
+				<li><a href="#features">Features</a></li>
 				<li><a href="#book-now">Booking</a></li>
 				<li><a href="#blog">Blog</a></li>
 				<li><a href="#footer">Contact</a></li>
@@ -687,7 +738,7 @@ tour operator tamilnadu
 
                 <div class="booking-field">
                     <label>Destination</label>
-                    <input type="text" placeholder="Where do you want to go?" required>
+                    <input type="text" id="tghDestinationInput" placeholder="Where do you want to go?" required>
                 </div>
 
                 <div class="booking-row">
@@ -761,6 +812,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Sea</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Rameshwaram Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Rameshwaram%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -778,6 +833,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-mountains"></span>City Tour</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Madurai Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Madurai%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -795,6 +854,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-mountains"></span>Multi State</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="South Indian Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20South%20Indian%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -813,6 +876,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-mountains"></span>Near Mountain</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Kerala Premium Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Kerala%20Premium%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -830,6 +897,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Hills</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Kerala Explore Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Kerala%20Explore%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -847,6 +918,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Villages</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Herala Heritage Tour" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Herala%20Heritage%20Tour." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -865,6 +940,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Honeymoon Packages" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Honeymoon%20Packages." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -882,6 +961,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Hills</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Munnar Special" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Munnar%20Special." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -899,6 +982,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Sea</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Kerala - Tamilnadu Tour" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Kerala%20-%20Tamilnadu%20Tour." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -907,7 +994,48 @@ tour operator tamilnadu
 			</div>
 		</section>
 
-
+		<!-- ============ TRIP FEATURES ============ -->
+		<section class="tgh-features" id="features">
+			<div class="tgh-features-in">
+				<div class="tgh-features-head">
+					<span>Why Travel With Us</span>
+					<h2>Everything Your Trip Needs, Handled</h2>
+					<p>From the first enquiry to the last drop-off, every package comes backed by these features so your holiday stays stress-free.</p>
+				</div>
+				<div class="tgh-features-grid">
+					<div class="tgh-feature-card">
+						<div class="tgh-feature-icon"><i class="fa fa-money"></i></div>
+						<h3>Best Price Guarantee</h3>
+						<p>Transparent, all-inclusive pricing with no hidden costs — the best value for every itinerary we plan.</p>
+					</div>
+					<div class="tgh-feature-card">
+						<div class="tgh-feature-icon"><i class="fa fa-calendar-check-o"></i></div>
+						<h3>Free Cancellation</h3>
+						<p>Plans change — cancel or reschedule select bookings free of charge up to the window shown at checkout.</p>
+					</div>
+					<div class="tgh-feature-card">
+						<div class="tgh-feature-icon"><i class="fa fa-user-circle-o"></i></div>
+						<h3>Verified Local Guides</h3>
+						<p>Every tour is led by experienced, background-checked guides who know the destination inside out.</p>
+					</div>
+					<div class="tgh-feature-card">
+						<div class="tgh-feature-icon"><i class="fa fa-headphones"></i></div>
+						<h3>24/7 Travel Support</h3>
+						<p>Round-the-clock assistance on call and WhatsApp for anything that comes up during your trip.</p>
+					</div>
+					<div class="tgh-feature-card">
+						<div class="tgh-feature-icon"><i class="fa fa-bed"></i></div>
+						<h3>Handpicked Stays</h3>
+						<p>Hotels, resorts and homestays are personally vetted for comfort, location and hospitality.</p>
+					</div>
+					<div class="tgh-feature-card">
+						<div class="tgh-feature-icon"><i class="fa fa-car"></i></div>
+						<h3>Private Transport</h3>
+						<p>Door-to-door travel in clean, air-conditioned vehicles with trained, courteous drivers.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<section class="ftco-section img ftco-select-destination" style="background-image: url(images/services-1.jpg);" id="destination">
 			<div class="container">
@@ -999,6 +1127,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>City Break</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Dubai Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Dubai%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -1014,6 +1146,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-mountains"></span>City Tour</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Singapore Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Singapore%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -1029,6 +1165,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-mountains"></span>City Tour</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Malaysia Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Malaysia%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -1044,6 +1184,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Thailand Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Thailand%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -1059,6 +1203,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-sun-umbrella"></span>Near Beach</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Bali Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Bali%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -1074,6 +1222,10 @@ tour operator tamilnadu
 									<li><span class="flaticon-king-size"></span>3</li>
 									<li><span class="flaticon-mountains"></span>Near Hills</li>
 								</ul>
+							<div class="tgh-pkg-actions">
+							<a href="#book-now" class="tgh-pkg-book" data-package="Sri Lanka Tour Package" onclick="tghFillBooking(this)"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+							<a href="https://wa.me/919037432640?text=Hi%20Trip%20G%20Travels%2C%20I%20want%20to%20book%20the%20Sri%20Lanka%20Tour%20Package." target="_blank" class="tgh-pkg-enquire"><i class="fa fa-whatsapp"></i> Enquire</a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -1388,7 +1540,7 @@ tour operator tamilnadu
 
 </section>
 
-		<footer class="ftco-footer bg-bottom ftco-no-pt" id="footer" style="background-image: url(images/bg_3.jpg);">
+		<footer class="ftco-footer bg-bottom ftco-no-pt tgh-footer-bg" id="footer">
 			<div class="container">
 				<div class="row mb-5">
 					<div class="col-md pt-5">
@@ -1453,72 +1605,22 @@ tour operator tamilnadu
 					</div>
 				</div>
 			</footer>
-			<!--------------floating img----------------!>
+			<!--------------floating buttons----------------!>
 
+			<!-- Back to Top -->
+			<a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-
-  <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-
-<style>
-    /* Container for floating buttons */
-    .floating-buttons {
-        position: fixed;
-        bottom: 30px;
-        left: 300px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        z-index: 9999;
-    }
-
-    /* Common button styles */
-    .floating-buttons a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        color: white;
-        font-size: 24px;
-        text-decoration: none;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        transition: transform 0.0s ease;
-    }
-
-    .floating-buttons a:hover {
-        transform: scale(1.1);
-    }
-
-    /* WhatsApp button */
-    .whatsapp {
-        background-color: #25D366;
-    }
-
-    /* Call button */
-    .call {
-        background-color: #0A84FF;
-    }
-</style>
-
-<!-- Floating Buttons -->
-<div class="floating-buttons">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/919037432640" class="whatsapp" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <!-- Call -->
-    <a href="tel:+919037432640" class="call" aria-label="Call Now">
-        <i class="fas fa-phone"></i>
-    </a>
-</div>
+			<!-- Floating Buttons (right side, mobile + desktop) -->
+			<div class="floating-buttons">
+				<!-- WhatsApp -->
+				<a href="https://wa.me/919037432640" class="whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+					<i class="fa fa-whatsapp"></i>
+				</a>
+				<!-- Call -->
+				<a href="tel:+919037432640" class="call" aria-label="Call Now">
+					<i class="fa fa-phone"></i>
+				</a>
+			</div>
 
 
     <!-- ============ FLOATING ACTION BUTTONS (Neat Vertical Stack) ============ -->
@@ -1604,6 +1706,16 @@ tour operator tamilnadu
 				}
 				setInterval(function(){ tghShowSlide((tghIndex + 1) % tghSlides.length); }, 5000);
 			})();
+
+			/* Fill the booking form's Destination field with the clicked package name */
+			function tghFillBooking(el){
+				var pkg = el.getAttribute('data-package');
+				var input = document.getElementById('tghDestinationInput');
+				if(input && pkg){ input.value = pkg; }
+				setTimeout(function(){
+					if(input){ input.focus(); }
+				}, 500);
+			}
 			</script>
 
 		</body>
