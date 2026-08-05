@@ -158,8 +158,12 @@ tour operator tamilnadu
 	.tgh-overlay{position:fixed;inset:0;background:rgba(8,30,26,.5);z-index:190;opacity:0;pointer-events:none;transition:.3s;}
 	.tgh-overlay.tgh-show{opacity:1;pointer-events:auto;}
 	body.tgh-noscroll{overflow:hidden;}
-	html{-webkit-text-size-adjust:100%;}
-	body{overflow-x:hidden;}
+	html{-webkit-text-size-adjust:100%;overflow-x:hidden;width:100%;}
+	body{overflow-x:hidden;width:100%;max-width:100%;position:relative;}
+	/* Global guard: nothing (tables, iframes, wide images) can force
+	   horizontal overflow and drag fixed-position elements off-screen. */
+	*{max-width:100%;}
+	table,pre{max-width:100%;overflow-x:auto;display:block;}
 	img{max-width:100%;height:auto;}
 
 	.tgh-hero{position:relative;height:88vh;min-height:560px;overflow:hidden;font-family:'Manrope',sans-serif;}
@@ -378,7 +382,7 @@ tour operator tamilnadu
 					<div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate d-flex align-items-center">
 						<div class="w-100">
 <span class="subheading">Welcome to Trip G Travels</span>							
-<img src="images/cert.jpeg" width="300px" height="350px">
+<img src="images/cert.jpeg" style="width:100%;max-width:300px;height:auto;">
 
 							<h2 class="mb-4">It's time to start your adventure</h2>
 							<p>Kerala Named God's Own Country place and It have more Admiring Places in Rivers, Sea, Mountains, Climate.</p>
@@ -1471,9 +1475,9 @@ tour operator tamilnadu
 		</section>
 
 <section>
-<div id="map" >
+<div id="map" style="width:100%;max-width:100%;overflow:hidden;">
 
-              <iframe src="https://" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://" style="border:0;width:100%;max-width:600px;height:450px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 </section>
 
@@ -1533,9 +1537,9 @@ tour operator tamilnadu
 		</section>
 
 <section>
-<div id="map" >
+<div id="map" style="width:100%;max-width:100%;overflow:hidden;">
 
-              <iframe src="https://" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://" style="border:0;width:100%;max-width:600px;height:450px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 </section>
 
