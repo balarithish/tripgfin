@@ -1,12 +1,12 @@
 :root{
-	  --tgh-teal-deep:#0B4640;
-	  --tgh-teal:#12665D;
-	  --tgh-teal-soft:#E4EEEC;
-	  --tgh-sand:#FBF6EC;
-	  --tgh-saffron:#E8A33D;
-	  --tgh-saffron-dark:#C97F1F;
-	  --tgh-ink:#12312C;
-	  --tgh-ink-soft:#4C6560;
+	  --tgh-teal-deep:#2E0E4E;
+	  --tgh-teal:#5B2A86;
+	  --tgh-teal-soft:#EDE4F5;
+	  --tgh-sand:#F8F5FB;
+	  --tgh-saffron:#D4AF37;
+	  --tgh-saffron-dark:#A8841F;
+	  --tgh-ink:#241A38;
+	  --tgh-ink-soft:#655A75;
 	}
 	.tgh-topbar{background:var(--tgh-teal-deep);color:#DCEAE7;font-size:.82rem;font-family:'Manrope',sans-serif;position:relative;z-index:210;}
 	.tgh-topbar-in{max-width:1220px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
@@ -162,8 +162,8 @@
 	}
 
 	/* ===== Footer background override ===== */
-	.tgh-footer-bg{background:linear-gradient(160deg,#062822 0%,var(--tgh-teal-deep) 55%,#0e564d 100%)!important;position:relative;}
-	.tgh-footer-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%, rgba(232,163,61,.10), transparent 45%),radial-gradient(circle at 85% 80%, rgba(232,163,61,.08), transparent 50%);pointer-events:none;}
+	.tgh-footer-bg{background:linear-gradient(160deg,#190A2B 0%,var(--tgh-teal-deep) 55%,#43206B 100%)!important;position:relative;}
+	.tgh-footer-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%, rgba(212,175,55,.10), transparent 45%),radial-gradient(circle at 85% 80%, rgba(212,175,55,.08), transparent 50%);pointer-events:none;}
 	.tgh-footer-bg .container{position:relative;z-index:2;}
 
 	/* ===== Floating buttons — small round, right side, all screens ===== */
