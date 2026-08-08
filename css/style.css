@@ -18,7 +18,7 @@
 	.tgh-topbar-right a{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:.2s;font-size:.82rem;color:#DCEAE7;text-decoration:none;}
 	.tgh-topbar-right a:hover{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
 
-	.tgh-navwrap{position:sticky;top:0;z-index:200;background:var(--tgh-sand);border-bottom:1px solid rgba(11,70,64,.1);font-family:'Manrope',sans-serif;transition:.3s;}
+	.tgh-navwrap{position:-webkit-sticky;position:sticky;top:0;left:0;right:0;z-index:200;background:var(--tgh-sand);border-bottom:1px solid rgba(11,70,64,.1);font-family:'Manrope',sans-serif;transition:.3s;}
 	.tgh-navwrap.tgh-scrolled{box-shadow:0 8px 24px -12px rgba(11,70,64,.28);}
 	.tgh-nav{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;}
 	.tgh-brand{display:flex;align-items:center;gap:11px;text-decoration:none;order:1;}
@@ -44,8 +44,11 @@
 	.tgh-overlay{position:fixed;inset:0;background:rgba(8,30,26,.5);z-index:190;opacity:0;pointer-events:none;transition:.3s;}
 	.tgh-overlay.tgh-show{opacity:1;pointer-events:auto;}
 	body.tgh-noscroll{overflow:hidden;}
-	html{-webkit-text-size-adjust:100%;overflow-x:hidden;width:100%;}
-	body{overflow-x:hidden;width:100%;max-width:100%;position:relative;}
+	html{-webkit-text-size-adjust:100%;overflow-x:clip;width:100%;}
+	body{overflow-x:clip;width:100%;max-width:100%;position:relative;}
+	/* overflow-x:clip (not "hidden") on purpose — "hidden" on html/body
+	   silently disables position:sticky in every browser, which is why
+	   the nav bar wasn't staying fixed while scrolling. */
 	/* Global guard: nothing (tables, iframes, wide images) can force
 	   horizontal overflow and drag fixed-position elements off-screen. */
 	*{max-width:100%;}
