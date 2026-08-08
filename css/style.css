@@ -185,3 +185,80 @@
 	   floating buttons or the rest of the page on mobile. */
 	#ftco-loader{animation:tgh-force-hide-loader 0s 3s forwards;}
 	@keyframes tgh-force-hide-loader{to{opacity:0;visibility:hidden;pointer-events:none;}}
+
+	/* ================================================================
+	   GLOBAL READABILITY FIX — consistent, high-contrast background
+	   and font colors across the whole site. Loaded after the base
+	   template stylesheet so these rules win regardless of what the
+	   template set originally.
+	   ================================================================ */
+
+	/* -- Sitewide base: warm sand background, dark ink text -- */
+	html,body{background:var(--tgh-sand)!important;color:var(--tgh-ink)!important;}
+	h1,h2,h3,h4,h5,h6{color:var(--tgh-teal-deep)!important;}
+	p,li,span,label,td,th{color:var(--tgh-ink-soft);}
+	a{color:var(--tgh-teal);}
+	a:hover,a:focus{color:var(--tgh-saffron-dark);}
+
+	/* -- Section backgrounds: alternate white / sand so cards pop -- */
+	.ftco-section{background:#fff;}
+	.ftco-section.services-section{background:var(--tgh-sand);}
+	.tgh-gallery{background:#fff!important;}
+
+	/* -- "subheading" eyebrow labels above section titles -- */
+	.subheading{color:var(--tgh-saffron-dark)!important;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;}
+	.heading-section h2{color:var(--tgh-teal-deep)!important;}
+	.heading-section p{color:var(--tgh-ink-soft)!important;}
+
+	/* -- Primary buttons: brand saffron w/ dark-teal text, always legible -- */
+	.btn-primary{background:var(--tgh-saffron)!important;border-color:var(--tgh-saffron)!important;color:var(--tgh-teal-deep)!important;font-weight:700;}
+	.btn-primary:hover,.btn-primary:focus{background:var(--tgh-saffron-dark)!important;border-color:var(--tgh-saffron-dark)!important;color:#fff!important;}
+
+	/* -- Service icon cards (Activities / Travel Arrangements / etc.) --
+	   these sit on a photo with a dark overlay, so keep their text white */
+	.services.services-1{color:#fff;}
+	.services.services-1 .heading,
+	.services.services-1 p{color:#fff!important;}
+	.services.services-1 .icon{color:#fff;}
+
+	/* -- Destination / package cards -- */
+	.project-wrap .text{background:#fff;}
+	.project-wrap .text h3,
+	.project-wrap .text h3 a{color:var(--tgh-teal-deep)!important;}
+	.project-wrap .text .location,
+	.project-wrap .text ul li{color:var(--tgh-ink-soft)!important;}
+	.project-wrap .price{background:var(--tgh-saffron);color:var(--tgh-teal-deep);}
+	.project-wrap .days{background:var(--tgh-teal-deep);color:#fff;}
+
+	/* -- Blog cards -- */
+	.blog-entry .text{background:#fff;}
+	.blog-entry h3.heading a{color:var(--tgh-teal-deep)!important;}
+	.blog-entry .text p{color:var(--tgh-ink-soft)!important;}
+	.blog-entry .day,.blog-entry .yr,.blog-entry .mos{color:var(--tgh-teal-deep);}
+
+	/* -- ftco-intro / ftco-about banners with a dark photo overlay:
+	   force white text so it stays readable over the image -- */
+	.ftco-intro .img,
+	.ftco-about.img{position:relative;color:#fff;}
+	.ftco-intro h2,
+	.ftco-intro p{color:#fff!important;}
+	.ftco-intro .overlay,
+	.ftco-about .overlay{background:rgba(6,20,18,.55);}
+
+	/* -- "About Us" text block (white background) stays dark ink -- */
+	.about-intro h2{color:var(--tgh-teal-deep)!important;}
+	.about-intro p{color:var(--tgh-ink-soft)!important;}
+
+	/* -- Footer: keep on dark teal gradient, force light readable text -- */
+	.ftco-footer,
+	.ftco-footer p,
+	.ftco-footer li,
+	.ftco-footer span.text{color:#CFE3DF!important;}
+	.ftco-footer h2.ftco-heading-2{color:#fff!important;font-weight:700;}
+	.ftco-footer a{color:#CFE3DF!important;text-decoration:none;}
+	.ftco-footer a:hover{color:var(--tgh-saffron)!important;}
+	.ftco-footer .ftco-footer-social a{color:#fff!important;}
+
+	/* -- Form fields (in case template defaults are low-contrast) -- */
+	input,select,textarea{color:var(--tgh-ink)!important;background:#fff;}
+	::placeholder{color:#8A9A96;opacity:1;}
